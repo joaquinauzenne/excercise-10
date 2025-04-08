@@ -295,7 +295,7 @@ avonet_passeriformes <- avonet_mod |>
 m.passeriformes.1 <- lm(data = avonet_passeriformes, Beak.Length_rel ~ Primary.Lifestyle)
 summary(m.passeriformes.1)
 
-aov.passeriformes.1 <- Anova(m.passeriformes, formula = Beak.Length_rel ~ Primary.Lifestyle)
+aov.passeriformes.1 <- Anova(m.passeriformes.1, formula = Beak.Length_rel ~ Primary.Lifestyle)
 aov.passeriformes.1
 
 ggplot(data = avonet_passeriformes, aes(x = Primary.Lifestyle, y = Beak.Length_rel)) +
@@ -309,7 +309,7 @@ ggplot(data = avonet_passeriformes, aes(x = Primary.Lifestyle, y = Beak.Length_r
 m.passeriformes.2 <- lm(data = avonet_passeriformes, Beak.Length_rel ~ Trophic.Level)
 summary(m.passeriformes.2)
 
-aov.passeriformes.2 <- Anova(m.passeriformes, formula = Beak.Length_rel ~ Trophic.Level)
+aov.passeriformes.2 <- Anova(m.passeriformes.2, formula = Beak.Length_rel ~ Trophic.Level)
 aov.passeriformes.2
 
 ggplot(data = avonet_passeriformes, aes(x = Trophic.Level, y = Beak.Length_rel)) +
@@ -365,7 +365,6 @@ interaction.plot(
   response = avonet_passeriformes$Beak.Length_rel,
   fun = mean, 
   type = "b",
-  leg
   col = c("red", "blue", "green"),
   pch = c(16,17,18),
   xlab = "Primary Lifestyle",
@@ -399,7 +398,6 @@ avonet_passeriformes <- avonet_passeriformes |>
 
 ratio_resid <- max(group_sd$sd_obs) / min(group_sd$sd_obs)
 ratio_resid
-
 ```
 
 Visually Inspection
